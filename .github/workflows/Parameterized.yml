@@ -13,14 +13,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
    inputs:
-      latesttag:
-        description: 'Latest tag default'
+      tag:
+        description: 'Tag'
         required: true
         default: 'latest'
-      manualtag:
-        description: 'Add any tag'
-        required: true
-        default: '1.0.0'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -41,16 +37,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - if: github.event.inputs.latesttag == 'true'
+      - if: github.event.inputs.tag == 'true'
         name: Build and push
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: devopsdemo4us/githubactions:latest
-
-      - if: github.event.inputs.manualtag == 'true'
-        name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          push: true
-          tags: devopsdemo4us/githubactions:${{ github.event.inputs.manualtag }}
+          tags: devopsdemo4us/githubactions:${{ github.event.inputs.tag }}
