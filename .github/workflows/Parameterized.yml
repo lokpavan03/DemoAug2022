@@ -37,9 +37,16 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - if: github.event.inputs.tag == 'true'
+      - if: github.event.inputs.tag == 'latest'
         name: Build and push
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: devopsdemo4us/githubactions:${{ github.event.inputs.tag }}
+          tags: devopsdemo4us/githubactions:latest
+          
+      - if: github.event.inputs.tag != 'latest'
+        name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: devopsdemo4us/githubactions:'${{ github.event.inputs.tag }}'
