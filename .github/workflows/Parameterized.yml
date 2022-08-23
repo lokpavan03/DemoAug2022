@@ -49,4 +49,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: devopsdemo4us/githubactions:'${{ github.event.inputs.tag }}'
+          tags: devopsdemo4us/githubactions:${{ github.event.inputs.tag }}
