@@ -1,0 +1,10 @@
+name: Reusable Input
+
+on:
+  push:
+  workflow_dispatch:   
+jobs:
+  call-workflow:    
+     uses: lokpavan03/DemoAug2022/.github/workflows/reusable-input.yaml@main
+     with:
+       name: siva
