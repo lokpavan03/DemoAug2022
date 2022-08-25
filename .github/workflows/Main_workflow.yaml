@@ -2,11 +2,10 @@ name: Reusable Workflow
 
 on:
   push:
-workflow_dispatch:   
+  workflow_dispatch:   
 jobs:
   call-workflow:
     uses: lokpavan03/DemoAug2022/.github/workflows/reusable-workflow.yml@main
-    with:
     secrets:
-      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}  
-      DOCKERTOKEN: ${{ secrets.DOCKERTOKEN }}  
+     DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}  
+     DOCKERTOKEN: ${{ secrets.DOCKERTOKEN }}  
