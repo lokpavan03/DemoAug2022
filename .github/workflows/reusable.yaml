@@ -3,12 +3,6 @@
 name: Docker Build and Publish Image
 on:
   workflow_call:
-    inputs:
-      image_name:
-        required: true
-        type: string
-      tag: 
-        type: string
     secrets:
       DOCKERHUB_USERNAME:
         required: true
