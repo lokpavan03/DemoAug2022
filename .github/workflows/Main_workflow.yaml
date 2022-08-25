@@ -5,7 +5,7 @@ on:
   workflow_dispatch:   
 jobs:
   call-workflow:
-    uses: ./.github/workflows/reusable.yml
+    uses: ../.github/workflows/reusable.yml@main
     secrets:
      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}  
      DOCKERTOKEN: ${{ secrets.DOCKERTOKEN }}  
