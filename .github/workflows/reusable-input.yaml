@@ -22,6 +22,6 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Display your Name
-        run: echo "Hello, This is $name!"
+        run: echo "Hello, This is ${{ inputs.name }}!"
 
      
