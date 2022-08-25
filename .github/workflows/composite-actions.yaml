@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-      - uses: actions/myaction@main
+      - uses: lokpavan03/DemoAug2022/.github/workflows/myaction.yaml@main
         with:
           who-to-greet: 'Siva'
